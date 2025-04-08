@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="5dp"
+    android:layout_margin="8dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_name"
+        android:scrollbars="none"
+        >
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cuisine_chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/restaurant_name"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:chipSpacing="2dp"
+            app:singleLine="true"
+            app:singleSelection="false" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontal_scroll_view"
+        android:id="@+id/horizontal_scroll_view2"
+        android:scrollbars="none"
+        >
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/deal_chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            app:chipSpacing="2dp"
+            app:singleLine="true"
+            app:singleSelection="false" />
+    </HorizontalScrollView>
+
+
+        <TextView
+            android:id="@+id/restaurant_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_below="@id/horizontal_scroll_view2"
+            android:textColor="@color/dark_gray"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:layout_below="@id/restaurant_address"
+
+            android:stepSize="0.5" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
